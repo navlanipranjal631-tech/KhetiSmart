@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#14532d" />
+
+    <!-- SEO & Social -->
+    <meta name="description" content="KhetiSmart — Smart farming decisions for every Indian farmer. Live weather, mandi prices, AI crop advisor, soil health monitoring." />
+    <meta name="keywords" content="agriculture, farming, India, mandi prices, crop advisor, soil health, kisan, kheti" />
+    <meta name="author" content="KhetiSmart" />
+
+    <!-- Open Graph (for sharing) -->
+    <meta property="og:title" content="KhetiSmart — Smart Farming Platform" />
+    <meta property="og:description" content="AI-powered crop advisor, live mandi prices, soil monitoring and weather for Indian farmers." />
+    <meta property="og:type" content="website" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="KhetiSmart" />
+
+    <!-- Fonts: Fraunces (display) + DM Sans (body) — used by App.jsx styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>KhetiSmart — Smart Farming Platform</title>
+
+    <style>
+      /* Prevent FOUC — match app background before React mounts */
+      html, body, #root {
+        margin: 0;
+        padding: 0;
+        min-height: 100dvh;
+        background: #f0fdf4;
+        font-family: 'DM Sans', sans-serif;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* Loading spinner shown before React hydrates */
+      #app-loader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100dvh;
+        gap: 16px;
+        background: linear-gradient(160deg, #f0fdf4 0%, #dcfce7 100%);
+      }
+      #app-loader .logo {
+        font-size: 48px;
+        animation: pulse 1.2s ease-in-out infinite;
+      }
+      #app-loader .name {
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: #14532d;
+        letter-spacing: -0.5px;
+      }
+      #app-loader .sub {
+        font-size: 13px;
+        color: #166534;
+        font-family: 'DM Sans', sans-serif;
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50%       { transform: scale(1.12); }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Shown while JS loads — React replaces #root immediately on mount -->
+    <div id="root">
+      <div id="app-loader">
+        <div class="logo">🌾</div>
+        <div class="name">KhetiSmart</div>
+        <div class="sub">Smart Farming Platform</div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
